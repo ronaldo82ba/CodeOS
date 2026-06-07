@@ -1,0 +1,50 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "CodeOS Manifest",
+  "description": "codeos_manifest.toml schema for .capp package format v0.1",
+  "type": "object",
+  "required": ["app", "entry"],
+  "properties": {
+    "app": {
+      "type": "object",
+      "required": ["id", "name", "version", "min_os_version"],
+      "properties": {
+        "id": { "type": "string", "description": "Globally unique reverse-DNS app id" },
+        "name": { "type": "string" },
+        "version": { "type": "string" },
+        "min_os_version": { "type": "string" }
+      }
+    },
+    "entry": {
+      "type": "object",
+      "required": ["binary"],
+      "properties": {
+        "binary": { "type": "string", "description": "Path inside .capp, must exist under bin/" },
+        "args": { "type": "array", "items": { "type": "string" }, "default": [] }
+      }
+    },
+    "ui": {
+      "type": "object",
+      "properties": {
+        "main_view": { "type": "string" },
+        "icon": { "type": "string" }
+      }
+    },
+    "permissions": {
+      "type": "object",
+      "properties": {
+        "network": { "type": "boolean", "default": false },
+        "storage": { "type": "boolean", "default": false },
+        "notifications": { "type": "boolean", "default": false }
+      }
+    },
+    "metadata": {
+      "type": "object",
+      "properties": {
+        "author": { "type": "string" },
+        "website": { "type": "string" },
+        "description": { "type": "string" }
+      }
+    }
+  }
+}

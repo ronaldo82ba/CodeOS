@@ -1,0 +1,102 @@
+:root {
+  --codeos-primary: #0066ff;
+  --codeos-bg: #0a0a0f;
+  --codeos-surface: #16161e;
+  --codeos-text: #f0f0f5;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: "Segoe UI", system-ui, sans-serif;
+  background: #1a1a24;
+  color: var(--codeos-text);
+}
+
+.codeos-device {
+  width: 390px;
+  min-height: 844px;
+  margin: 2rem auto;
+  background: var(--codeos-bg);
+  border-radius: 2rem;
+  overflow: hidden;
+  box-shadow: 0 24px 64px rgba(0, 0, 0, 0.5);
+  border: 2px solid #2a2a38;
+}
+
+.codeos-status-bar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0.75rem 1.25rem;
+  font-size: 0.75rem;
+  background: var(--codeos-surface);
+}
+
+.codeos-status-center {
+  font-weight: 600;
+  color: var(--codeos-primary);
+}
+
+.codeos-main {
+  padding: 2rem 1.5rem;
+  text-align: center;
+}
+
+.codeos-title {
+  font-size: 2rem;
+  font-weight: 700;
+  background: linear-gradient(135deg, #0066ff, #00ccff);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.codeos-subtitle {
+  margin-top: 0.5rem;
+  opacity: 0.6;
+  font-size: 0.875rem;
+}
+
+.codeos-launcher-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 1rem;
+  margin-top: 2.5rem;
+}
+
+.codeos-app-icon {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.5rem;
+  background: none;
+  border: none;
+  color: inherit;
+  cursor: pointer;
+  padding: 0.5rem;
+  border-radius: 1rem;
+}
+
+.codeos-app-icon:hover {
+  background: rgba(255, 255, 255, 0.05);
+}
+
+.codeos-app-icon-emoji {
+  font-size: 2rem;
+  width: 3.5rem;
+  height: 3.5rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: var(--codeos-surface);
+  border-radius: 1rem;
+}
+
+.codeos-app-icon-label {
+  font-size: 0.7rem;
+  opacity: 0.8;
+}

@@ -1,0 +1,47 @@
+{
+  "service": "codesvc.storage",
+  "version": "0.1",
+  "methods": [
+    {
+      "method": "Storage.WriteFile",
+      "payload": {
+        "app_id": "string",
+        "path": "string",
+        "data": "string (base64)"
+      },
+      "response": {},
+      "errors": ["IPC_INVALID_PAYLOAD", "STORAGE_INVALID_PATH"]
+    },
+    {
+      "method": "Storage.ReadFile",
+      "payload": {
+        "app_id": "string",
+        "path": "string"
+      },
+      "response": {
+        "data": "string (base64)"
+      },
+      "errors": ["IPC_INVALID_PAYLOAD", "STORAGE_FILE_NOT_FOUND"]
+    },
+    {
+      "method": "Storage.ListFiles",
+      "payload": {
+        "app_id": "string",
+        "path": "string"
+      },
+      "response": {
+        "files": ["string"]
+      },
+      "errors": ["IPC_INVALID_PAYLOAD"]
+    }
+  ],
+  "events": [
+    {
+      "method": "Storage.FileChanged",
+      "payload": {
+        "app_id": "string",
+        "path": "string"
+      }
+    }
+  ]
+}

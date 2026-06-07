@@ -1,0 +1,20 @@
+[package]
+name = "codeos-shell"
+description = "CodeUI shell — home, status bar, app switcher"
+version.workspace = true
+edition.workspace = true
+license.workspace = true
+authors.workspace = true
+
+[[bin]]
+name = "codeos-shell"
+path = "src/main.rs"
+
+[dependencies]
+codecore = { path = "../../core" }
+codeos-ui = { path = "../../framework/ui" }
+codeos-ipc-client = { path = "../../framework/ipc_client" }
+serde_json = { workspace = true }
+tokio = { workspace = true }
+tracing = { workspace = true }
+tracing-subscriber = { workspace = true }

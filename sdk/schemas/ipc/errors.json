@@ -1,0 +1,64 @@
+{
+  "version": "0.1",
+  "description": "Shared IPC error codes for CodeOS system services",
+  "errors": [
+    {
+      "code": "IPC_NOT_FOUND",
+      "description": "Unknown endpoint or method"
+    },
+    {
+      "code": "IPC_INVALID_PAYLOAD",
+      "description": "Request payload failed validation"
+    },
+    {
+      "code": "IPC_PERMISSION_DENIED",
+      "description": "Caller lacks required capability"
+    },
+    {
+      "code": "IPC_INTERNAL_ERROR",
+      "description": "Unhandled service error"
+    },
+    {
+      "code": "WINDOW_SURFACE_NOT_FOUND",
+      "description": "Surface ID does not exist"
+    },
+    {
+      "code": "APP_NOT_FOUND",
+      "description": "App instance not found"
+    },
+    {
+      "code": "APP_ALREADY_RUNNING",
+      "description": "App instance already running"
+    },
+    {
+      "code": "PKG_APP_NOT_FOUND",
+      "description": "Installed app not found"
+    },
+    {
+      "code": "PKG_ALREADY_INSTALLED",
+      "description": "App is already installed"
+    },
+    {
+      "code": "PKG_INVALID_CAPP",
+      "description": "Invalid or unreadable .capp package"
+    },
+    {
+      "code": "NOTIF_NOT_FOUND",
+      "description": "Notification ID not found"
+    },
+    {
+      "code": "STORAGE_FILE_NOT_FOUND",
+      "description": "File not found in app storage"
+    },
+    {
+      "code": "STORAGE_INVALID_PATH",
+      "description": "Path is invalid or escapes app sandbox"
+    }
+  ],
+  "response_error_shape": {
+    "error": {
+      "code": "string",
+      "message": "string"
+    }
+  }
+}

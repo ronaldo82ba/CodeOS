@@ -1,0 +1,47 @@
+{
+  "service": "codesvc.app",
+  "version": "0.1",
+  "methods": [
+    {
+      "method": "AppManager.StartApp",
+      "payload": {
+        "app_id": "string"
+      },
+      "response": {
+        "instance_id": "string (uuid)"
+      },
+      "errors": ["IPC_INVALID_PAYLOAD"]
+    },
+    {
+      "method": "AppManager.StopApp",
+      "payload": {
+        "instance_id": "string"
+      },
+      "response": {},
+      "errors": ["IPC_INVALID_PAYLOAD", "APP_NOT_FOUND"]
+    },
+    {
+      "method": "AppManager.ListRunningApps",
+      "payload": {},
+      "response": {
+        "running": [
+          {
+            "app_id": "string",
+            "instance_id": "string",
+            "state": "foreground | background | paused"
+          }
+        ]
+      },
+      "errors": []
+    }
+  ],
+  "events": [
+    {
+      "method": "AppManager.AppStateChanged",
+      "payload": {
+        "instance_id": "string",
+        "state": "foreground | background | paused | stopped"
+      }
+    }
+  ]
+}

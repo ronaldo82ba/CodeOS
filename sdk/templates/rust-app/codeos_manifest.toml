@@ -1,0 +1,23 @@
+[app]
+id = "com.example.myapp"
+name = "My App"
+version = "1.0.0"
+min_os_version = "0.1.0"
+
+[entry]
+binary = "bin/myapp"
+args = []
+
+[ui]
+main_view = "res/main_layout.json"
+icon = "assets/icon.png"
+
+[permissions]
+network = false
+storage = true
+notifications = false
+
+[metadata]
+author = "Ronaldo Mijares"
+website = "https://example.com"
+description = "Short description of the app."

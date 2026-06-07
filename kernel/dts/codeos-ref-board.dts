@@ -1,0 +1,21 @@
+/dts-v1/;
+
+/ {
+    model = "CodeOS Reference Board";
+    compatible = "codeos,ref-board-v1", "codeos,ref-board";
+
+    #address-cells = <2>;
+    #size-cells = <2>;
+
+    chosen {
+        stdout-path = "serial0:115200n8";
+        bootargs = "console=ttyAMA0 root=/dev/mmcblk0p2 rw init=/sbin/codeos-init";
+    };
+
+    memory@80000000 {
+        device_type = "memory";
+        reg = <0x0 0x80000000 0x0 0x40000000>; /* 1 GiB */
+    };
+
+    /* Placeholder for SoC-specific nodes — partner integration v1.0 */
+};

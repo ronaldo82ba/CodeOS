@@ -1,0 +1,53 @@
+{
+  "service": "codesvc.notif",
+  "version": "0.1",
+  "methods": [
+    {
+      "method": "Notif.Post",
+      "payload": {
+        "app_id": "string",
+        "title": "string",
+        "body": "string",
+        "timestamp": "number"
+      },
+      "response": {
+        "notif_id": "string"
+      },
+      "errors": ["IPC_INVALID_PAYLOAD"]
+    },
+    {
+      "method": "Notif.Clear",
+      "payload": {
+        "notif_id": "string"
+      },
+      "response": {},
+      "errors": ["IPC_INVALID_PAYLOAD", "NOTIF_NOT_FOUND"]
+    },
+    {
+      "method": "Notif.List",
+      "payload": {},
+      "response": {
+        "notifications": [
+          {
+            "notif_id": "string",
+            "app_id": "string",
+            "title": "string",
+            "body": "string",
+            "timestamp": "number"
+          }
+        ]
+      },
+      "errors": []
+    }
+  ],
+  "events": [
+    {
+      "method": "Notif.NewNotification",
+      "payload": { "notif_id": "string" }
+    },
+    {
+      "method": "Notif.NotificationCleared",
+      "payload": { "notif_id": "string" }
+    }
+  ]
+}

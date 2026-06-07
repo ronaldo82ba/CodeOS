@@ -1,0 +1,22 @@
+[package]
+name = "codeos-cli"
+description = "CodeSDK CLI — new, build, run, docs"
+version.workspace = true
+edition.workspace = true
+license.workspace = true
+authors.workspace = true
+
+[[bin]]
+name = "codeos"
+path = "src/main.rs"
+
+[dependencies]
+clap = { workspace = true }
+serde = { workspace = true }
+serde_json = { workspace = true }
+toml = { workspace = true }
+thiserror = { workspace = true }
+tracing = { workspace = true }
+tracing-subscriber = { workspace = true }
+codesvc-pkg = { path = "../../services/pkg" }
+codeos-runtime = { path = "../../framework/runtime" }

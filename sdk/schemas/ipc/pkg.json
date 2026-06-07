@@ -1,0 +1,48 @@
+{
+  "service": "codesvc.pkg",
+  "version": "0.1",
+  "methods": [
+    {
+      "method": "Pkg.Install",
+      "payload": {
+        "capp_path": "string"
+      },
+      "response": {
+        "app_id": "string",
+        "version": "string"
+      },
+      "errors": ["IPC_INVALID_PAYLOAD", "PKG_INVALID_CAPP", "PKG_ALREADY_INSTALLED"]
+    },
+    {
+      "method": "Pkg.Uninstall",
+      "payload": {
+        "app_id": "string"
+      },
+      "response": {},
+      "errors": ["IPC_INVALID_PAYLOAD", "PKG_APP_NOT_FOUND"]
+    },
+    {
+      "method": "Pkg.GetAppInfo",
+      "payload": {
+        "app_id": "string"
+      },
+      "response": {
+        "app_id": "string",
+        "name": "string",
+        "version": "string",
+        "permissions": ["string"]
+      },
+      "errors": ["IPC_INVALID_PAYLOAD", "PKG_APP_NOT_FOUND"]
+    }
+  ],
+  "events": [
+    {
+      "method": "Pkg.AppInstalled",
+      "payload": { "app_id": "string" }
+    },
+    {
+      "method": "Pkg.AppUninstalled",
+      "payload": { "app_id": "string" }
+    }
+  ]
+}

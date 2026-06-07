@@ -1,0 +1,24 @@
+From: CodeOS Team <codeos@example.com>
+Subject: [PATCH] Add CodeOS sysfs nodes for system telemetry
+
+Adds /sys/codeos/version and /sys/codeos/pulse_status for userspace
+service discovery during early boot.
+
+---
+ drivers/codeos/sysfs.c | 42 ++++++++++++++++++++++++++++++++++++++++++
+ 1 file changed, 42 insertions(+)
+
+diff --git a/drivers/codeos/sysfs.c b/drivers/codeos/sysfs.c
+new file mode 100644
+index 0000000..abc1234
+--- /dev/null
++++ b/drivers/codeos/sysfs.c
+@@ -0,0 +1,42 @@
++// CodeOS kernel sysfs nodes — stub patch for v0.1
++// Full implementation planned for v0.2
++
++#define CODEOS_VERSION "0.1.0-alpha"
++
++// Exposes:
++//   /sys/codeos/version      — kernel+CodeOS version string
++//   /sys/codeos/pulse_status — PulseLink readiness flag

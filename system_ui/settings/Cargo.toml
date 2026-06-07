@@ -1,0 +1,16 @@
+[package]
+name = "codeos-settings-ui"
+description = "CodeUI settings application"
+version.workspace = true
+edition.workspace = true
+license.workspace = true
+authors.workspace = true
+
+[[bin]]
+name = "codeos-settings"
+path = "src/main.rs"
+
+[dependencies]
+codeos-ui = { path = "../../framework/ui" }
+tracing = { workspace = true }
+tracing-subscriber = { workspace = true }

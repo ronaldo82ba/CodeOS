@@ -1,0 +1,18 @@
+{
+  "codeos_manifest_version": "0.1",
+  "package": {
+    "id": "com.example.webapp",
+    "name": "Web App",
+    "version": "1.0.0",
+    "entry": "bin/web-shell"
+  },
+  "permissions": [],
+  "capabilities": {
+    "sandbox": "standard",
+    "network": true
+  },
+  "ui": {
+    "launch_mode": "single_task",
+    "theme": "system"
+  }
+}

@@ -1,0 +1,39 @@
+/dts-v1/;
+
+/ {
+    model = "CodeOS QEMU virt";
+    compatible = "linux,dummy-virt";
+
+    #address-cells = <2>;
+    #size-cells = <2>;
+    interrupt-parent = <&gic>;
+
+    chosen {
+        stdout-path = "serial0:115200n8";
+        bootargs = "console=hvc0 root=/dev/vda rw init=/sbin/codeos-init";
+    };
+
+    memory@40000000 {
+        device_type = "memory";
+        reg = <0x0 0x40000000 0x0 0x80000000>; /* 2 GiB */
+    };
+
+    cpus {
+        #address-cells = <1>;
+        #size-cells = <0>;
+
+        cpu@0 {
+            device_type = "cpu";
+            compatible = "arm,armv8";
+            reg = <0x0>;
+        };
+    };
+
+    gic: interrupt-controller {
+        compatible = "arm,gic-v3";
+        #interrupt-cells = <3>;
+        interrupt-controller;
+    };
+
+    /* VirtIO devices wired by QEMU - expanded in v0.2 */
+};

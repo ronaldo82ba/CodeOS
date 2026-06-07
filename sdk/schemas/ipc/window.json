@@ -1,0 +1,45 @@
+{
+  "service": "codesvc.window",
+  "version": "0.1",
+  "methods": [
+    {
+      "method": "Window.CreateSurface",
+      "payload": {
+        "app_id": "string",
+        "width": "number",
+        "height": "number"
+      },
+      "response": {
+        "surface_id": "string (uuid)"
+      },
+      "errors": ["IPC_INVALID_PAYLOAD"]
+    },
+    {
+      "method": "Window.DestroySurface",
+      "payload": {
+        "surface_id": "string"
+      },
+      "response": {},
+      "errors": ["IPC_INVALID_PAYLOAD", "WINDOW_SURFACE_NOT_FOUND"]
+    },
+    {
+      "method": "Window.SubmitFrame",
+      "payload": {
+        "surface_id": "string",
+        "frame_data": "string (base64)"
+      },
+      "response": {},
+      "errors": ["IPC_INVALID_PAYLOAD", "WINDOW_SURFACE_NOT_FOUND"]
+    }
+  ],
+  "events": [
+    {
+      "method": "Window.SurfaceChanged",
+      "payload": {
+        "surface_id": "string",
+        "width": "number",
+        "height": "number"
+      }
+    }
+  ]
+}

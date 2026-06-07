@@ -1,0 +1,24 @@
+[package]
+name = "codesvc-auth"
+description = "codesvc.auth — authentication and capability tokens"
+version.workspace = true
+edition.workspace = true
+license.workspace = true
+authors.workspace = true
+
+[lib]
+path = "src/lib.rs"
+
+[[bin]]
+name = "codesvc-auth"
+path = "src/main.rs"
+
+[dependencies]
+codecore = { path = "../../core" }
+serde = { workspace = true }
+serde_json = { workspace = true }
+tokio = { workspace = true }
+tracing = { workspace = true }
+tracing-subscriber = { workspace = true }
+uuid = { workspace = true }
+once_cell = { workspace = true }

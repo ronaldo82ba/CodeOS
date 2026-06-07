@@ -1,0 +1,37 @@
+# Build artifacts
+/target/
+**/target/
+**/dist/
+**/build/
+**/node_modules/
+*.o
+*.so
+*.a
+
+# IDE
+.idea/
+.vscode/
+*.swp
+*.swo
+
+# Simulator runtime
+simulator/.cache/
+simulator/out/
+
+# SDK cache
+.sdk-cache/
+.cpk-build/
+
+# Secrets
+.env
+.env.local
+*.pem
+*.key
+
+# OS
+.DS_Store
+Thumbs.db
+
+# QEMU images
+*.img
+*.qcow2

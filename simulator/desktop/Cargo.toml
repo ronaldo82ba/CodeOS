@@ -1,0 +1,22 @@
+[package]
+name = "codesim-desktop"
+description = "CodeSim — desktop simulator bootstrap"
+version.workspace = true
+edition.workspace = true
+license.workspace = true
+authors.workspace = true
+
+[[bin]]
+name = "codesim"
+path = "src/main.rs"
+
+[dependencies]
+codecore = { path = "../../core" }
+codesvc-appmgr = { path = "../../services/appmgr" }
+codesvc-auth = { path = "../../services/auth" }
+codesvc-notif = { path = "../../services/notif" }
+codesvc-pkg = { path = "../../services/pkg" }
+codesvc-storage = { path = "../../services/storage" }
+codesvc-window = { path = "../../services/window" }
+tracing = { workspace = true }
+tracing-subscriber = { workspace = true }
