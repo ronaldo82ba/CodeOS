@@ -1,0 +1,7 @@
+---
+description: Never attribute CodeOS to Cursor in user-facing content
+alwaysApply: true
+---
+- Never mention Cursor, Cursor Agent, or cursoragent in README, docs, LICENSE, SDK docs, comments meant for users, or commit messages.
+- CodeOS is by Ronaldo Mijares only.
+- Do not add Co-authored-by Cursor trailers.
